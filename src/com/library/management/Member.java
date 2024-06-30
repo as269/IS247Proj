@@ -2,7 +2,7 @@ package com.library.management;
 
 import java.util.ArrayList;
 
-public class Member {
+public class Member implements Borrowable {
     private String name;
     private String memberID;
     private ArrayList<Book> borrowedBooks;
@@ -17,27 +17,26 @@ public class Member {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getMemberID() {
         return memberID;
     }
 
-    public void setMemberID(String memberID) {
-        this.memberID = memberID;
-    }
-
-    public ArrayList<Book> getBorrowedBooks() {
-        return borrowedBooks;
-    }
-
+    @Override
     public void borrowBook(Book book) {
         borrowedBooks.add(book);
     }
 
+    @Override
     public void returnBook(Book book) {
         borrowedBooks.remove(book);
+    }
+
+    public boolean hasBorrowedBook(Book book) {
+        return borrowedBooks.contains(book);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s, MemberID: %s", name, memberID);
     }
 }

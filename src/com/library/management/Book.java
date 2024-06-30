@@ -10,23 +10,19 @@ public class Book {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
-        this.available = true; // By default, a new book is available
+        this.available = true;
+    }
+
+    public Book(String title, String author) { // Method overloading
+        this(title, author, "Unknown");
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getISBN() {
@@ -44,5 +40,9 @@ public class Book {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-}
 
+    @Override
+    public String toString() {
+        return String.format("Title: %s, Author: %s, ISBN: %s, Available: %s", title, author, ISBN, available);
+    }
+}

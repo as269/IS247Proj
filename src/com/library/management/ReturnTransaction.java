@@ -3,24 +3,37 @@ package com.library.management;
 import java.util.Date;
 
 public class ReturnTransaction extends Transaction {
-    private Book book;
-    private Member member;
+    private final Book book;
+    private final Member member;
+    private final Date transactionDate;
 
-    public ReturnTransaction(String transactionID, Date transactionDate, Book book, Member member) {
-        super(transactionID, transactionDate);
+    public ReturnTransaction(Book book, Member member) {
+        super();
         this.book = book;
         this.member = member;
+        this.transactionDate = new Date();
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
     }
 
     @Override
     public void process() {
-        // Implement returning logic here
-        if (member.hasBorrowed(book)) {
-            member.returnBook(book);
+        if (member.hasBorrowedBook(book)) {
             book.setAvailable(true);
-            System.out.println(book.getTitle() + " has been returned by " + member.getName());
+            member.returnBook(book);
+            System.out.println("Book returned successfully.");
         } else {
-            System.out.println(member.getName() + " did not borrow " + book.getTitle());
+            System.out.println("This book was not borrowed by the member.");
         }
     }
 }
