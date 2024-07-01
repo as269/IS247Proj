@@ -45,14 +45,15 @@ public class Library {
         transactionHistory.push(returnTransaction);
     }
 
-    public Book searchBook(String title) {
+    public Book searchBook(String query) {
         for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
+            if (book.getTitle().equalsIgnoreCase(query) || book.getISBN().equalsIgnoreCase(query)) {
                 return book;
             }
         }
         return null;
     }
+
 
     public void displayTransactionHistory() {
         System.out.println("Transaction History:");

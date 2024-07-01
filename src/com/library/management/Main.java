@@ -77,15 +77,15 @@ public class Main {
             }
         }
 
-        System.out.print("Enter book title: ");
-        String title = scanner.nextLine();
-        Book book = library.searchBook(title);
+        System.out.print("Enter book title or ISBN: ");
+        String query = scanner.nextLine();
+        Book book = library.searchBook(query);
 
         if (book != null && book.isAvailable()) {
             library.borrowBook(generateTransactionID(), new Date(), member, book);
             System.out.println("Book '" + book.getTitle() + "' borrowed by " + member.getName());
         } else {
-            System.out.println("Book is already borrowed by a member.");
+            System.out.println("Book is not available.");
         }
     }
 
@@ -101,9 +101,9 @@ public class Main {
             }
         }
 
-        System.out.print("Enter book title: ");
-        String title = scanner.nextLine();
-        Book book = library.searchBook(title);
+        System.out.print("Enter book title or ISBN: ");
+        String query = scanner.nextLine();
+        Book book = library.searchBook(query);
 
         if (book != null && member.hasBorrowedBook(book)) {
             library.returnBook(generateTransactionID(), new Date(), member, book);
@@ -114,9 +114,9 @@ public class Main {
     }
 
     private static void searchBook() {
-        System.out.print("Enter book title: ");
-        String title = scanner.nextLine();
-        Book book = library.searchBook(title);
+        System.out.print("Enter book title or ISBN: ");
+        String query = scanner.nextLine();
+        Book book = library.searchBook(query);
 
         if (book != null) {
             System.out.printf("Book found: %s by %s\n", book.getTitle(), book.getAuthor());
