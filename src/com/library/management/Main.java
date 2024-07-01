@@ -40,7 +40,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // main method
         library.addBook(new Book("Effective Java", "Joshua Bloch", "978-0134685991"));
         library.addBook(new Book("Clean Code", "Robert C. Martin", "978-0132350884"));
         library.addMember(new Member("Alice", "M001"));
