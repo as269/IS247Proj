@@ -10,3 +10,7 @@ Team Members & Roles:
 
 Paragraph describing the project:
 This Java application streamlines library book borrowing and returns. Users can efficiently search for books by author name or ISBN number. The system manages book availability, allowing users to borrow and return books with ease. This user-friendly application is ideal for libraries of all sizes looking to improve the borrowing and return process.
+
+
+JavaDocs 
+file:///Users/ansh/Downloads/College/UMBC/Summer%202024/IS%20247/JavaDocs-Project/com/library/management/package-summary.html
