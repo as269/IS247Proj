@@ -1,5 +1,5 @@
 Project Title: 
-Streamlined Borrowing and Returns: A Java Library Transaction System
+**Streamlined Borrowing and Returns: A Java Library Transaction System**
 
 Hello, everyone, welcome to our presentation on the Library Management System project. Today, we will walk you through 
 the development and functionalities of our system, which is designed to streamline book management and member 
